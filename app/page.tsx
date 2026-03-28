@@ -1,3 +1,4 @@
+import Footer from "@/component/Footer";
 import HeaderSlider from "@/component/HeaderSlider";
 import Homeproducts from "@/component/Homeproducts";
 import Navbar from "@/component/Navbar";
@@ -14,6 +15,7 @@ function page() {
         <HeaderSlider />
         <Homeproducts products={allProducts} />
       </div>
+      <Footer />
     </div>
   );
 }
