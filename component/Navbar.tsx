@@ -5,8 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import HamX from "./HamX";
+import { User } from "@supabase/supabase-js";
 
-function Navbar() {
+function Navbar({ user }: { user: User | null }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -70,6 +71,7 @@ function Navbar() {
           </button>
           <HamX isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
+        <div>{user?.email}</div>
       </div>
       {isOpen && (
         <div className="md:hidden absolute w-[70%] h-full flex flex-col flex-full bg-black text-white top-[52px] right-0 z-10">
